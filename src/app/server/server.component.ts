@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-server',
-  templateUrl: './server.component.html',
+  selector: '[type="text"]',
+  template: ` <p>ServerComponent with inline template and not external</p> `,
   styleUrl: './server.component.css',
 })
 export class ServerComponent {

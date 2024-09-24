@@ -1,0 +1,11 @@
+h3 {
+    color: green;
+    font-weight: 600;
+
+}
+
+div {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}

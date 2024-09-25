@@ -53,10 +53,10 @@ Upon clicking the button, the username should be reset to an empty string
   <p *ngIf="showDetails">Secret Password is tuna</p>
   <hr />
   <p
-    *ngFor="let num of logArr"
+    *ngFor="let num of logArr; let idx = index"
     [ngStyle]="{ backgroundColor: num >= 5 && 'blue' }"
     [ngClass]="{ white: num >= 5 }"
   >
-    {{ num }}
+    {{ num }} index : {{ idx }}
   </p>
 </div>

@@ -20,9 +20,8 @@
 <p>Server Name : {{ serverName }}</p>
 <p>Server Runtime : {{ serverRuntime }} seconds</p>
 
-<p [textContent]="allowNewServer"></p>
+<!-- <p [textContent]="allowNewServer"></p> -->
 <div id="text">Text is now showing</div>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 <p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
 <ng-template #noServer> <p>No server was created!</p></ng-template>

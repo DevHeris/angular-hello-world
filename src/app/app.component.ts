@@ -6,20 +6,27 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  username = '';
-  allowReset = false;
+  showDetails: boolean = false;
+  logArr: number[] = [];
+  i = 1;
 
-  onResetUpdateState() {
-    if (this.username !== '' && this.username !== ' ') {
-      this.allowReset = true;
-    } else {
-      this.allowReset = false;
-    }
+  onToggle() {
+    this.showDetails = !this.showDetails;
+    this.logArr.push(this.i);
+    this.i += 1;
   }
-
-  onReset(event: any) {
-    this.username = '';
-    event.target.value = '';
-    this.onResetUpdateState();
-  }
+  // username = '';
+  // allowReset = false;
+  // onResetUpdateState() {
+  //   if (this.username !== '' && this.username !== ' ') {
+  //     this.allowReset = true;
+  //   } else {
+  //     this.allowReset = false;
+  //   }
+  // }
+  // onReset(event: any) {
+  //   this.username = '';
+  //   event.target.value = '';
+  //   this.onResetUpdateState();
+  // }
 }

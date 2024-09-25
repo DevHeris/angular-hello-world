@@ -1,15 +1,16 @@
-<div>
+<!-- <div>
   <h3>App Component</h3>
   <app-servers></app-servers>
 </div>
-<br />
+<br /> -->
 <!-- Assignment 2 -->
 <!-- Add a Input field which updates a property ('username') via Two-Way-Binding
 Output the username property via String Interpolation (in a paragraph below the input)
 Add a button which may only be clicked if the username is NOT an empty string
 Upon clicking the button, the username should be reset to an empty string
  -->
-<div>
+
+<!-- <div>
   <label for="username">Username</label>
   <br />
   <input type="text" class="form-control" [(ngModel)]="username" />
@@ -22,4 +23,40 @@ Upon clicking the button, the username should be reset to an empty string
   >
     Reset
   </button>
+</div> -->
+
+<!-- Assignment 3 -->
+
+<!-- <ol>
+  <li>Add A button which says 'Display Details'</li>
+  <li>
+    Add a paragraph with any content of your choice (e.g. 'Secret Password =
+    tuna')
+  </li>
+  <li>
+    Toggle the displaying of that paragraph with the button created in the first
+    step
+  </li>
+  <li>
+    Log all button clicks in an array and output that array below the secret
+    paragraph (maybe log a timestamp or simply an incrementing number)
+  </li>
+  <li>
+    Starting at the 5th log item, give all future log items a blue background
+    (via ngStyle) and white color (ngClass)
+  </li>
+</ol> -->
+
+<div class="container">
+  <button class="btn btn-primary" (click)="onToggle()">Toggle Details</button>
+  <hr />
+  <p *ngIf="showDetails">Secret Password is tuna</p>
+  <hr />
+  <p
+    *ngFor="let num of logArr"
+    [ngStyle]="{ backgroundColor: num >= 5 && 'blue' }"
+    [ngClass]="{ white: num >= 5 }"
+  >
+    {{ num }}
+  </p>
 </div>

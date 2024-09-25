@@ -7,16 +7,19 @@ import { Component } from '@angular/core';
 })
 export class ServersComponent {
   allowNewServer: boolean = true;
-  serverCreationStatus = 'No server was created!';
+  serverCreationStatus = 'No server was created';
   serverName = '';
   serverRuntime = 0;
+  serverCreated = false;
 
   onShowText(): void {
     document.getElementById('text').style.display = 'block';
   }
 
   onCreateServer(): void {
-    this.serverCreationStatus = 'A server was created!';
+    this.serverCreated = true;
+    this.serverCreationStatus =
+      'A server ' + `"${this.serverName}"` + ' was created!';
   }
 
   onUpdateServerName(event: InputEvent): void {

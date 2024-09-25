@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
   serverId: number = 12;
-  serverStatus: string = 'offline';
+  serverStatus: string = Math.random() > 0.5 ? 'offline' : 'online';
 
-  getServerStatus() {
+  getServerStatus(): string {
     return this.serverStatus;
+  }
+
+  getColor(): string {
+    return this.serverStatus === 'online' ? 'lightgreen' : 'pink';
   }
 }

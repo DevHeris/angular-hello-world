@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: '[type="text"]',
-  template: ` <p>ServerComponent with inline template and not external</p> `,
+  selector: 'app-server',
+  templateUrl: './server.component.html',
   styleUrl: './server.component.css',
 })
 export class ServerComponent {
-  name: string;
+  serverId: number = 12;
+  serverStatus: string = 'offline';
 
-  constructor() {
-    this.name = 'Heris';
+  getServerStatus() {
+    return this.serverStatus;
   }
 }

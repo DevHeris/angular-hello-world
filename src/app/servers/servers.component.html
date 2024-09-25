@@ -1,1 +1,27 @@
-<p>ServersComponent</p>
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<br />
+
+<label>Server runtime : </label>
+<input type="number" [(ngModel)]="serverRuntime" />
+<!-- Text interpolation -->
+<!-- <button class="btn btn-primary" disabled="{{ allowNewServer }}"> -->
+<!-- or -->
+<!-- Property binding -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onShowText()"
+  (click)="onCreateServer()"
+>
+  Add server
+</button>
+<hr />
+<p>Server Name : {{ serverName }}</p>
+<p>Server Runtime : {{ serverRuntime }} seconds</p>
+
+<p [textContent]="allowNewServer"></p>
+<div id="text">Text is now showing</div>
+<app-server></app-server>
+<app-server></app-server>
+<p>Server creation status : {{ serverCreationStatus }}</p>
